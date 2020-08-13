@@ -13,14 +13,19 @@ const client = new Discord.Client()
         const boasvindas = `Seja bem-vindo ao servidor de Discord da **Loyalty Contabilidade** ${member}! \nVocê pode utilizar o canal de texto livre até que alguém da equipe te dê algum cargo.`
         const canal= member.guild.channels.cache.get(idcanal)
         canal.send(boasvindas)
-        
+    });
+   client.on('guildMemberRemove', member => {
+        const idcanal ='741259320863227927' 
+        const saida = `${member} saiu do servidor.`
+        const canal= member.guild.channels.cache.get(idcanal)
+        canal.send(saida)    
 
 });
 //COMEÇO DA AGENDA-----------------------------------------------------------------------------------------------------------\\
 const schedule = require('node-schedule');
-const idcanalvoz1 = '741370039969775621' 
-const idcanalvoz2 = '743530495685689454' 
-const idcanalvoz3 = '743530541307002912' 
+const idcanalvoz1 = '741359984440377494' 
+const idcanalvoz2 = '741360161637007441' 
+const idcanalvoz3 = '741360179995738143' 
 
     var ent1 = schedule.scheduleJob('0 0 9 * * *', function(){
         const channel1 = client.channels.cache.get(idcanalvoz1);
